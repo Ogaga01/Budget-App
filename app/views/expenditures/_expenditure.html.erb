@@ -1,12 +1,7 @@
 <div id="<%= dom_id expenditure %>">
-  <p>
-    <strong>Name:</strong>
-    <%= expenditure.name %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= expenditure.amount %>
-  </p>
-
+  <div class= 'category-container'>
+    <div><strong><%= @group_id.name %>:</strong> </div>
+    <div> <%= expenditure.name %> </div>
+    <div>$ <%= expenditure.amount %></div>
+  </div>
 </div>
