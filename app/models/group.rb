@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
     validates :name, presence: true
   
     def user_name(author_id)
-      User.find(author_id).full_name
+      User.find(author_id).name
     end
   
     def total_spent(id)
