@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   let(:user) { User.create(id: 1, name: 'user', email: 'user@mail.com', password: '123456') }
-  let(:group) { Group.create(id: 2, name: 'Shopping', icon: 'Shopping', user_id: user.id) }
+  let(:group) { Group.create(id: 2, name: 'Shopping', icon: 'Shopping', author_id: user.id) }
 
   describe 'Validations' do
     it 'should be valid' do
@@ -20,7 +20,7 @@ RSpec.describe Group, type: :model do
     end
 
     it 'should allow valid user_id' do
-      group.user_id = nil
+      group.author_id = nil
       expect(group).to_not be_valid
     end
   end

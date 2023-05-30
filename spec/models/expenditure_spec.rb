@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   let(:user) { User.create(id: 1, name: 'user', email: 'user@mail.com', password: '123456') }
-  let(:group) { Group.create(id: 2, name: 'Shopping', icon: 'Shopping', user_id: user.id) }
-  let(:expenditure) { Expenditure.create(id: 1, name: 'Dress', amount: 12, user_id: user.id, group_id: group.id) }
+  let(:group) { Group.create(id: 2, name: 'Shopping', icon: 'Shopping', author_id: user.id) }
+  let(:expenditure) { Expenditure.create(id: 1, name: 'Dress', amount: 12, author_id: user.id, group_id: group.id) }
 
   describe 'Expenditure validations' do
     context 'when valid' do

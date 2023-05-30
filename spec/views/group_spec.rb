@@ -4,7 +4,7 @@ RSpec.describe 'Categories', type: :feature do
   describe 'Categories' do
     before(:each) do
       @user = User.create! password: '123456', email: 'user@email.com', name: 'User Name'
-      Group.create! name: 'group', user_id: @user.id, icon: 'Education'
+      Group.create! name: 'group', author_id: @user.id, icon: 'Education'
 
       visit '/users/sign_in'
       fill_in 'Email', with: 'user@email.com'

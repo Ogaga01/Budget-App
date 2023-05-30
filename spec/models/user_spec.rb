@@ -7,17 +7,17 @@ RSpec.describe User, type: :model do
   before { subject.save }
 
   it 'name should not be nil' do
-    subject.full_name = nil
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 
   it 'full_name should not be empty' do
-    subject.full_name = ''
+    subject.name = ''
     expect(subject).to_not be_valid
   end
 
   it 'should valid the full_name' do
-    subject.full_name = 'user'
+    subject.name = 'user'
     expect(subject).to be_valid
   end
 end

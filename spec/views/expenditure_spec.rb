@@ -4,9 +4,9 @@ RSpec.describe 'Expenditure', type: :feature do
   describe 'Expenditure' do
     before(:each) do
       @user = User.create! password: '123456', email: 'user@email.com', name: 'User Name'
-      @group = Group.create! name: 'group', user_id: @user.id, icon: 'Education'
-      Expenditure.create! name: 'Expenditure', user_id: @user.id, amount: 20, group_id: @group.id
-      Expenditure.create! name: 'new Expenditure', user_id: @user.id, amount: 20, group_id: @group.id
+      @group = Group.create! name: 'group', author_id: @user.id, icon: 'Education'
+      Expenditure.create! name: 'Expenditure', author_id: @user.id, amount: 20, group_id: @group.id
+      Expenditure.create! name: 'new Expenditure', author_id: @user.id, amount: 20, group_id: @group.id
 
       visit '/users/sign_in'
       fill_in 'Email', with: 'user@email.com'
