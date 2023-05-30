@@ -1,7 +1,5 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <%= bootstrap_devise_error_messages! %>
-
   <div class="nav-header mb-2">
     <div>
       <%= link_to  :root do %>
@@ -10,7 +8,7 @@
     </div>
     <h4 class="text-gray-4">REGISTER</h4>
     <div class="actions">
-      <%=  f.submit t('.sign_up'), class:" bg-light nav-right-action text-gray-4" %>
+      <%=  f.submit "SIGN UP", class:" bg-light nav-right-action text-gray-4" %>
     </div>
   </div>
 
