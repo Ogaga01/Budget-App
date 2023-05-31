@@ -2,13 +2,14 @@ databases:
   - name: my-budget
     databaseName: my_budget_jah8
     user: my_budget_jah8_user
+    plan: free
 
 services:
   - type: web
     name: Friendly-Budget
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -16,3 +17,4 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+    plan: free
